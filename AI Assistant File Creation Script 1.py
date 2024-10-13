@@ -112,7 +112,7 @@ A sophisticated, multi-agent AI assistant application designed with modularity, 
 
 ## Requirements
 
-- Python 3.8 or higher
+- Python 3.8 or higher (recommended Python 3.10 or 3.11 for best compatibility)
 
 ## License
 
@@ -122,7 +122,7 @@ MIT License
 # Python dependencies
 
 # Core dependencies
-PyYAML==6.0
+PyYAML==6.0.2
 requests==2.31.0
 
 # OpenAI APIs
@@ -136,17 +136,11 @@ pymilvus==2.2.0
 
 # Audio processing
 sounddevice==0.4.6
-numpy==1.21.2
+numpy>=1.21.2,<1.28
 
 # Screen capture
 Pillow==8.3.2
 mss==6.1.0
-
-# Asynchronous programming
-asyncio
-
-# GUI
-tkinter
 
 # Sandboxing
 RestrictedPython==5.1
@@ -166,16 +160,15 @@ setup(
     version='1.0',
     packages=find_packages(),
     install_requires=[
-        'PyYAML>=6.0',
+        'PyYAML>=6.0.2',
         'requests>=2.31.0',
         'openai>=0.27.8',
         'loguru>=0.6.0',
         'pymilvus>=2.2.0',
         'sounddevice>=0.4.6',
-        'numpy>=1.21.2',
+        'numpy>=1.21.2,<1.28',
         'Pillow>=8.3.2',
         'mss>=6.1.0',
-        'asyncio',
         'RestrictedPython>=5.1',
         'psutil>=5.8.0',
     ],
