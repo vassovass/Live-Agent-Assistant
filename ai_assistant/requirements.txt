@@ -1,0 +1,39 @@
+
+# Python dependencies
+
+# Core dependencies
+PyYAML==6.0
+requests==2.31.0
+
+# OpenAI APIs
+openai==0.27.8
+
+# Logging and error handling
+loguru==0.6.0
+
+# Vector database
+pymilvus==2.2.0
+
+# Audio processing
+sounddevice==0.4.6
+numpy==1.21.2
+
+# Screen capture
+Pillow==8.3.2
+mss==6.1.0
+
+# Asynchronous programming
+asyncio
+
+# GUI
+tkinter
+
+# Sandboxing
+RestrictedPython==5.1
+
+# Testing
+pytest==6.2.5
+coverage==5.5
+
+# Resource management
+psutil==5.8.0

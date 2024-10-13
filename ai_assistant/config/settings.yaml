@@ -1,0 +1,53 @@
+
+# YAML configuration settings
+
+# API Keys
+openai_api_key: 'your_openai_api_key_here'
+
+# Agent Settings
+agents:
+  voice_processor:
+    enabled: true
+    model: 'RealtimeAPI'
+  transcriber:
+    enabled: true
+    model: 'Whisper'
+  planner:
+    enabled: true
+    model: 'GPT-4'
+  executor:
+    enabled: true
+  live_agent:
+    enabled: true
+    model: 'GPT-3.5-turbo'
+
+# Logging Settings
+logging:
+  level: 'DEBUG'
+  file: 'data/logs/application.log'
+
+# Error Handling
+error_handling:
+  vector_db_path: 'data/errors_vector_db'
+  retry_attempts: 3
+
+# Security
+sandboxing:
+  enabled: true
+
+# Screen Capture
+screen_capture:
+  enabled: true
+  capture_interval: 5  # in seconds
+
+# Data Storage
+data_storage:
+  log_dir: 'data/logs'
+  vector_db_dir: 'data/errors_vector_db'
+
+# Resource Limits
+resource_limits:
+  cpu_usage: 80
+  memory_usage: 80
+
+# Other configurations as needed
