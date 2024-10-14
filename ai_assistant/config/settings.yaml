@@ -1,8 +1,7 @@
-
 # YAML configuration settings
 
 # API Keys
-openai_api_key: 'your_openai_api_key_here'
+openai_api_key: ${OPENAI_API_KEY}
 
 # Agent Settings
 agents:
@@ -14,7 +13,7 @@ agents:
     model: 'Whisper'
   planner:
     enabled: true
-    model: 'GPT-4'
+    model: 'o1-mini'
   executor:
     enabled: true
   live_agent:

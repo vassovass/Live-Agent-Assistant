@@ -1,27 +1,48 @@
 @echo off
-echo Activating virtual environment and changing to AI Assistant directory...
 
-cd /d C:\Users\vasso.vassiliades\Downloads\Live Agent Assistant\ai_assistant
+:: Set the project directory
+set "PROJECT_DIR=C:\Users\vasso.vassiliades\Downloads\Live Agent Assistant\Live-Agent-Assistant"
+set "AI_ASSISTANT_DIR=%PROJECT_DIR%\ai_assistant"
+set "VENV_DIR=%PROJECT_DIR%\venv"
 
-if not exist ..\venv\Scripts\activate.bat (
-    echo Virtual environment not found. Please create it first.
+:: Change to the AI Assistant directory
+echo Changing to AI Assistant directory...
+cd /d "%AI_ASSISTANT_DIR%"
+if errorlevel 1 (
+    echo Failed to change directory. Please check if the path exists:
+    echo %AI_ASSISTANT_DIR%
     pause
     exit /b 1
 )
+echo Successfully changed to AI Assistant directory.
+echo Current directory: %CD%
 
-call ..\venv\Scripts\activate.bat
+:: Create virtual environment if it doesn't exist
+if not exist "%VENV_DIR%\Scripts\activate.bat" (
+    echo Creating virtual environment...
+    python -m venv "%VENV_DIR%"
+    if errorlevel 1 (
+        echo Failed to create virtual environment.
+        pause
+        exit /b 1
+    )
+    echo Virtual environment created successfully.
+)
 
+:: Activate the virtual environment
+echo Activating virtual environment...
+call "%VENV_DIR%\Scripts\activate.bat"
 if errorlevel 1 (
     echo Failed to activate virtual environment.
     pause
     exit /b 1
 )
-
 echo Virtual environment activated successfully.
-echo Current directory: %CD%
-echo You are now in the AI Assistant virtual environment and correct folder.
-echo.
-echo To deactivate the virtual environment when you're done, type: deactivate
-echo To start the application, type: python ai_assistant\main.py
 
+:: Output information about running requirements
+echo.
+echo To install dependencies, run the following command:
+echo pip install -r requirements.txt
+
+:: Keep the command prompt open
 cmd /k

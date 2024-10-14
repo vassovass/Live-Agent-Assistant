@@ -11,7 +11,7 @@ openai==0.27.8
 loguru==0.6.0
 
 # Vector database
-pymilvus==2.2.0
+pymilvus>=2.2.0,<2.3.0
 
 # Audio processing
 sounddevice==0.4.6
@@ -32,5 +32,5 @@ coverage==5.5
 psutil==5.8.0
 
 # gRPC
-grpcio>=1.50.0,<2.0.0
-grpcio-tools>=1.50.0,<2.0.0
+grpcio>=1.47.0,<1.49.0
+grpcio-tools>=1.47.0,<1.49.0
